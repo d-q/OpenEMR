@@ -1,0 +1,48 @@
+﻿@model OpenEMR.Models.Penjamin
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Penjamin</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NamaPenjamin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NamaPenjamin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusPasien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusPasien)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TarifJasaAdministrasi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TarifJasaAdministrasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TarifRumahSakit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TarifRumahSakit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalTarif)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalTarif)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

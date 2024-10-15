@@ -1,0 +1,49 @@
+﻿@model OpenEMR.Models.Tindakan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Tindakan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PegawaiId" class="control-label"></label>
+                <select asp-for="PegawaiId" class="form-control" asp-items="ViewBag.PegawaiId"></select>
+                <span asp-validation-for="PegawaiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KunjunganId" class="control-label"></label>
+                <select asp-for="KunjunganId" class="form-control" asp-items="ViewBag.KunjunganId"></select>
+                <span asp-validation-for="KunjunganId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PemeriksaanId" class="control-label"></label>
+                <select asp-for="PemeriksaanId" class="form-control" asp-items="ViewBag.PemeriksaanId"></select>
+                <span asp-validation-for="PemeriksaanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaktuPemeriksaan" class="control-label"></label>
+                <input asp-for="WaktuPemeriksaan" class="form-control" />
+                <span asp-validation-for="WaktuPemeriksaan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@model OpenEMR.Models.Tindakan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tindakan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pemeriksa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pemeriksa.AlamatEmailPribadi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kunjungan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kunjungan.NomorRegis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TindakanMedis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TindakanMedis.KategoriPemeriksaan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WaktuPemeriksaan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WaktuPemeriksaan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

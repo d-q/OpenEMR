@@ -1,0 +1,564 @@
+﻿@model OpenEMR.Models.Kunjungan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    canvas {
+        border: 1px solid #ccc;
+        background: url('/images/bodymap.jpg') no-repeat center center;
+        background-size: contain;
+    }
+</style>
+
+<h1>Edit</h1>
+
+<h4>Kunjungan</h4>
+<hr />
+<form asp-action="Edit">
+    <div class="row">
+        <div class="col">            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomorRegis" class="control-label"></label>
+                <input asp-for="NomorRegis" class="form-control" readonly />
+                <span asp-validation-for="NomorRegis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasienId" class="control-label"></label>
+                <select asp-for="PasienId" class="form-control" asp-items="ViewBag.PasienId" ></select>
+                <span asp-validation-for="PasienId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DokterId" class="control-label"></label>
+                <select asp-for="DokterId" class="form-control" asp-items="ViewBag.DokterId"></select>
+                <span asp-validation-for="DokterId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="StatusPasien" class="control-label"></label>
+                <select asp-for="StatusPasien" class="form-control" asp-items="@(new SelectList(ViewBag.StatusPasien, "ID", "Name"))">
+                    <option value="">-- Select Status --</option>
+                </select>
+                <span asp-validation-for="StatusPasien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaktuMendaftar" class="control-label"></label>
+                <input asp-for="WaktuMendaftar" class="form-control" />
+                <span asp-validation-for="WaktuMendaftar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PenjaminId" class="control-label"></label>
+                <select asp-for="PenjaminId" class="form-control" asp-items="ViewBag.PenjaminId"></select>
+                <span asp-validation-for="PenjaminId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="AsesmenNyeri-tab" data-toggle="tab" href="#AsesmenNyeri" role="tab" aria-controls="AsesmenNyeri" aria-selected="true">Asesmen Nyeri</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="PemeriksaanFisik-tab" data-toggle="tab" href="#PemeriksaanFisik" role="tab" aria-controls="PemeriksaanFisik" aria-selected="false">Pemeriksaan Fisik</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="Tindakan-tab" data-toggle="tab" href="#Tindakan" role="tab" aria-controls="Tindakan" aria-selected="false">Tindakan</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="AsesmenNyeri" role="tabpanel" aria-labelledby="AsesmenNyeri-tab">
+            <div class="row">
+                <div class="col">
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="AdaNyeri" class="control-label"></label>
+                        <select asp-for="AdaNyeri" class="form-control" asp-items="ViewBag.AdaNyeriOptions"></select>
+                        <span asp-validation-for="AdaNyeri" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="SkalaNyeri" class="control-label"></label>
+                        <select asp-for="SkalaNyeri" class="form-control" asp-items="ViewBag.SkalaNyeriEnum">
+                            <option value="">-- Select Skala Nyeri --</option>
+                        </select>
+                        <span asp-validation-for="SkalaNyeri" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="LokasiNyeri" class="control-label"></label>
+                        <input asp-for="LokasiNyeri" class="form-control" />
+                        <span asp-validation-for="LokasiNyeri" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="PenyebabNyeri" class="control-label"></label>
+                        <input asp-for="PenyebabNyeri" class="form-control" />
+                        <span asp-validation-for="PenyebabNyeri" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DurasiNyeri" class="control-label"></label>
+                        <input asp-for="DurasiNyeri" class="form-control" />
+                        <span asp-validation-for="DurasiNyeri" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FrekuensiNyeri" class="control-label"></label>
+                        <input asp-for="FrekuensiNyeri" class="form-control" />
+                        <span asp-validation-for="FrekuensiNyeri" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="PemeriksaanFisik" role="tabpanel" aria-labelledby="PemeriksaanFisik-tab">
+            <div class="row">
+                <div class="col">
+
+                    <div class="mb-3">
+                        <div class="text-center">
+                            <br/>
+                            <label class="form-label">Body Map (Gambar di area yang sakit):</label>
+                            <canvas id="body-map" width="500" height="800"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <button type="button" id="toggle-mode" class="btn btn-info">Switch to Erase Mode</button>
+                        <button type="button" id="undo" class="btn btn-secondary">Undo</button>
+                        <button type="button" id="redo" class="btn btn-secondary">Redo</button>
+                        <button type="button" id="clear-canvas" class="btn btn-warning">Clear All Drawings</button>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <br />
+                            <div class="form-group">
+                                <label asp-for="DenyutJantung" class="control-label"></label>
+                                <input asp-for="DenyutJantung" class="form-control" />
+                                <span asp-validation-for="DenyutJantung" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Pernapasan" class="control-label"></label>
+                                <input asp-for="Pernapasan" class="form-control" />
+                                <span asp-validation-for="Pernapasan" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="TekananDarahSistole" class="control-label"></label>
+                                <input asp-for="TekananDarahSistole" class="form-control" />
+                                <span asp-validation-for="TekananDarahSistole" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="TekananDarahDiastole" class="control-label"></label>
+                                <input asp-for="TekananDarahDiastole" class="form-control" />
+                                <span asp-validation-for="TekananDarahDiastole" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="SuhuTubuh" class="control-label"></label>
+                                <input asp-for="SuhuTubuh" class="form-control" />
+                                <span asp-validation-for="SuhuTubuh" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Kepala" class="control-label"></label>
+                                <input asp-for="Kepala" class="form-control" />
+                                <span asp-validation-for="Kepala" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Mata" class="control-label"></label>
+                                <input asp-for="Mata" class="form-control" />
+                                <span asp-validation-for="Mata" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Telinga" class="control-label"></label>
+                                <input asp-for="Telinga" class="form-control" />
+                                <span asp-validation-for="Telinga" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Hidung" class="control-label"></label>
+                                <input asp-for="Hidung" class="form-control" />
+                                <span asp-validation-for="Hidung" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Rambut" class="control-label"></label>
+                                <input asp-for="Rambut" class="form-control" />
+                                <span asp-validation-for="Rambut" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Bibir" class="control-label"></label>
+                                <input asp-for="Bibir" class="form-control" />
+                                <span asp-validation-for="Bibir" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <br />
+                            <div class="form-group">
+                                <label asp-for="GigiGeligi" class="control-label"></label>
+                                <input asp-for="GigiGeligi" class="form-control" />
+                                <span asp-validation-for="GigiGeligi" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Lidah" class="control-label"></label>
+                                <input asp-for="Lidah" class="form-control" />
+                                <span asp-validation-for="Lidah" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="LangitLangit" class="control-label"></label>
+                                <input asp-for="LangitLangit" class="form-control" />
+                                <span asp-validation-for="LangitLangit" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Leher" class="control-label"></label>
+                                <input asp-for="Leher" class="form-control" />
+                                <span asp-validation-for="Leher" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Tenggorokan" class="control-label"></label>
+                                <input asp-for="Tenggorokan" class="form-control" />
+                                <span asp-validation-for="Tenggorokan" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Tonsil" class="control-label"></label>
+                                <input asp-for="Tonsil" class="form-control" />
+                                <span asp-validation-for="Tonsil" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Dada" class="control-label"></label>
+                                <input asp-for="Dada" class="form-control" />
+                                <span asp-validation-for="Dada" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Payudara" class="control-label"></label>
+                                <input asp-for="Payudara" class="form-control" />
+                                <span asp-validation-for="Payudara" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Punggung" class="control-label"></label>
+                                <input asp-for="Punggung" class="form-control" />
+                                <span asp-validation-for="Punggung" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Perut" class="control-label"></label>
+                                <input asp-for="Perut" class="form-control" />
+                                <span asp-validation-for="Perut" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Genital" class="control-label"></label>
+                                <input asp-for="Genital" class="form-control" />
+                                <span asp-validation-for="Genital" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <br />
+                            <div class="form-group">
+                                <label asp-for="Anus" class="control-label"></label>
+                                <input asp-for="Anus" class="form-control" />
+                                <span asp-validation-for="Anus" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="LenganAtas" class="control-label"></label>
+                                <input asp-for="LenganAtas" class="form-control" />
+                                <span asp-validation-for="LenganAtas" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="LenganBawah" class="control-label"></label>
+                                <input asp-for="LenganBawah" class="form-control" />
+                                <span asp-validation-for="LenganBawah" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="JariTangan" class="control-label"></label>
+                                <input asp-for="JariTangan" class="form-control" />
+                                <span asp-validation-for="JariTangan" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="KukuTangan" class="control-label"></label>
+                                <input asp-for="KukuTangan" class="form-control" />
+                                <span asp-validation-for="KukuTangan" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PersendianTangan" class="control-label"></label>
+                                <input asp-for="PersendianTangan" class="form-control" />
+                                <span asp-validation-for="PersendianTangan" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="TungkaiAtas" class="control-label"></label>
+                                <input asp-for="TungkaiAtas" class="form-control" />
+                                <span asp-validation-for="TungkaiAtas" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="TungkaiBawah" class="control-label"></label>
+                                <input asp-for="TungkaiBawah" class="form-control" />
+                                <span asp-validation-for="TungkaiBawah" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="JariKaki" class="control-label"></label>
+                                <input asp-for="JariKaki" class="form-control" />
+                                <span asp-validation-for="JariKaki" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="KukuKaki" class="control-label"></label>
+                                <input asp-for="KukuKaki" class="form-control" />
+                                <span asp-validation-for="KukuKaki" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PersendianKaki" class="control-label"></label>
+                                <input asp-for="PersendianKaki" class="form-control" />
+                                <span asp-validation-for="PersendianKaki" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Tindakan" role="tabpanel" aria-labelledby="Tindakan-tab">
+            <br/>
+            <table class="table" id="tindakanTable">
+                <thead>
+                    <tr>
+                        <th>Tindakan</th>
+                        <th>Pemeriksa</th>
+                        <th>Waktu Pemeriksaan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Tindakans != null)
+                    {
+                        int index = 0; // Indeks untuk array
+                        foreach (var tindakan in Model.Tindakans)
+                        {
+                            <tr>
+                                <td>
+                                    <select name="Tindakans[@index].PemeriksaanId" class="form-control">
+                                        @foreach (var item in ViewBag.TindakanList)
+                                        {
+                                            <option value="@item.Id">@item.NamaPemeriksaan</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="Tindakans[@index].PegawaiId" class="form-control">
+                                        @foreach (var pegawai in ViewBag.PegawaiList)
+                                        {
+                                            <option value="@pegawai.Id">@pegawai.FirstName</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    <input name="Tindakans[@index].WaktuPemeriksaan" type="datetime-local" class="form-control" value="@tindakan.WaktuPemeriksaan.ToString("yyyy-MM-ddTHH:mm")" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="removeRow(this)">Hapus</button>
+                                </td>
+                            </tr>
+                            index++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">Tidak ada tindakan yang tersedia.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-secondary" id="addTindakanBtn">Tambah Tindakan</button>
+        </div>
+    </div>    
+
+    <hr />
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" /> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.getElementById("addTindakanBtn").addEventListener("click", function () {
+            var tableBody = document.getElementById("tindakanTable").getElementsByTagName("tbody")[0];
+            var rowCount = tableBody.rows.length;
+            var newRow = tableBody.insertRow();
+
+            // Tindakan
+            var cell1 = newRow.insertCell(0);
+            cell1.innerHTML = `
+                                        <select name="Tindakans[${rowCount}].PemeriksaanId" class="form-control">
+                                            <option value="">-- Select --</option>
+        @foreach (var tindakan in ViewBag.TindakanList)
+        {
+                                                            <option value="@tindakan.Id">@tindakan.NamaPemeriksaan</option>
+        }
+                                        </select>`;
+
+            // Pemeriksa
+            var cell2 = newRow.insertCell(1);
+            cell2.innerHTML = `
+                                        <select name="Tindakans[${rowCount}].PegawaiId" class="form-control">
+                                            <option value="">-- Select --</option>
+        @foreach (var pegawai in ViewBag.PegawaiList)
+        {
+                                                            <option value="@pegawai.Id">@pegawai.FirstName</option>
+        }
+                                        </select>`;
+
+            // Waktu Pemeriksaan
+            var cell3 = newRow.insertCell(2);
+            cell3.innerHTML = `
+                                        <input name="Tindakans[${rowCount}].WaktuPemeriksaan" type="datetime-local" class="form-control" />`;
+
+            // Tombol Hapus
+            var cell4 = newRow.insertCell(3);
+            cell4.innerHTML = '<button type="button" class="btn btn-danger" onclick="removeRow(this)">Hapus</button>';
+        });
+
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+
+        // canvas
+        const canvas = document.getElementById('body-map');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    let erasing = false;
+
+    // Undo and Redo stacks
+    let undoStack = [];
+    let redoStack = [];
+
+    // Set up drawing settings
+    ctx.strokeStyle = 'red'; // Default color for drawing
+    ctx.lineWidth = 5; // Set line width
+
+    // Function to save canvas state to the undo stack
+    function saveState() {
+      const canvasData = canvas.toDataURL();
+      undoStack.push(canvasData);
+      redoStack = []; // Clear redo stack when new action is performed
+    }
+
+    // Function to restore canvas from a saved state
+    function restoreState(state) {
+      const img = new Image();
+      img.src = state;
+      img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
+    }
+
+    // Toggle between drawing and erasing modes
+    document.getElementById('toggle-mode').addEventListener('click', function() {
+      erasing = !erasing;
+      this.textContent = erasing ? 'Switch to Draw Mode' : 'Switch to Erase Mode';
+      ctx.strokeStyle = erasing ? 'white' : 'red'; // White for erasing
+    });
+
+    // Start drawing or erasing
+    canvas.addEventListener('mousedown', function(event) {
+      drawing = true;
+      ctx.beginPath();
+      ctx.moveTo(event.offsetX, event.offsetY);
+      saveState(); // Save state before drawing or erasing
+    });
+
+    // Draw or erase on canvas
+    canvas.addEventListener('mousemove', function(event) {
+      if (drawing) {
+        ctx.lineTo(event.offsetX, event.offsetY);
+        ctx.stroke();
+      }
+    });
+
+    // Stop drawing or erasing
+    canvas.addEventListener('mouseup', function() {
+      drawing = false;
+    });
+
+    // Undo action
+    document.getElementById('undo').addEventListener('click', function() {
+      if (undoStack.length > 0) {
+        redoStack.push(undoStack.pop()); // Move current state to redoStack
+        if (undoStack.length > 0) {
+          restoreState(undoStack[undoStack.length - 1]); // Restore previous state
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear if no undo states left
+        }
+      }
+    });
+
+    // Redo action
+    document.getElementById('redo').addEventListener('click', function() {
+      if (redoStack.length > 0) {
+        const redoState = redoStack.pop();
+        undoStack.push(redoState); // Move state back to undoStack
+        restoreState(redoState);
+      }
+    });
+
+    // Clear the canvas
+    document.getElementById('clear-canvas').addEventListener('click', function() {
+      // Clear all drawings but keep the background image
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Redraw the background image
+      const img = new Image();
+      img.src = '/images/bodymap.jpg'; // Background image URL
+      img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      saveState(); // Save empty state after clearing
+    });
+
+    // Draw the background image on initial load
+    window.addEventListener('load', () => {
+      const img = new Image();
+      img.src = '/images/bodymap.jpg'; // Background image URL
+      img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      saveState(); // Save the initial state with the background image
+    });
+
+    </script>
+}

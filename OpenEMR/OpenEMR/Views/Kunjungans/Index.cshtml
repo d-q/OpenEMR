@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OpenEMR.Models.Kunjungan>
+
+@{
+    ViewData["Title"] = "Kunjungan";
+}
+
+<h1>Kunjungan</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dokter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusPasien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaktuMendaftar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penjamin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomorRegis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pasien.NomorRekamMedis)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Dokter.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusPasien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaktuMendaftar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penjamin.NamaPenjamin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomorRegis)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model OpenEMR.Models.Penjamin
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Penjamin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NamaPenjamin" class="control-label"></label>
+                <input asp-for="NamaPenjamin" class="form-control" />
+                <span asp-validation-for="NamaPenjamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusPasien" class="control-label"></label>
+                <select asp-for="StatusPasien" class="form-control" asp-items="@(new SelectList(ViewBag.StatusPasien, "ID", "Name"))">
+                    <option value="">-- Select Status --</option>
+                </select>
+                <span asp-validation-for="StatusPasien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TarifJasaAdministrasi" class="control-label"></label>
+                <input asp-for="TarifJasaAdministrasi" class="form-control" oninput="updateTotalTarif()" />
+                <span asp-validation-for="TarifJasaAdministrasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TarifRumahSakit" class="control-label"></label>
+                <input asp-for="TarifRumahSakit" class="form-control" oninput="updateTotalTarif()" />
+                <span asp-validation-for="TarifRumahSakit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalTarif" class="control-label"></label>
+                <input asp-for="TotalTarif" class="form-control" readonly />
+                <span asp-validation-for="TotalTarif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        function updateTotalTarif() {
+            var tarifJasaAdministrasi = parseFloat(document.getElementById('TarifJasaAdministrasi').value) || 0;
+            var tarifRumahSakit = parseFloat(document.getElementById('TarifRumahSakit').value) || 0;
+            var totalTarif = tarifJasaAdministrasi + tarifRumahSakit;
+
+            document.getElementById('TotalTarif').value = totalTarif.toFixed(2);
+        }
+
+        // Update otomatis ketika halaman pertama kali di-load
+        window.onload = function () {
+            updateTotalTarif();
+        };
+    </script>
+}

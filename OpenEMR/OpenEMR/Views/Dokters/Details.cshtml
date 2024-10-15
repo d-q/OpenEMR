@@ -1,0 +1,102 @@
+﻿@model OpenEMR.Models.Dokter
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Dokter</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomorSIP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomorSIP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TaripPemeriksaan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TaripPemeriksaan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Poli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Poli.NamaPoli)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NIK)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NIK)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TanggalLahir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TanggalLahir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TempatLahir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TempatLahir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JenisKelamin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JenisKelamin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AlamatRumah)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AlamatRumah)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomorTeleponPribadi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomorTeleponPribadi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomorTeleponDarurat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomorTeleponDarurat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AlamatEmailPribadi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AlamatEmailPribadi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusPernikahan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusPernikahan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,231 @@
+﻿@model OpenEMR.Models.Pasien
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pasien</h4>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <dl class="row">
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NomorRekamMedis)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NomorRekamMedis)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NamaLengkap)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NamaLengkap)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NIK)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NIK)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NomorIdentitasLain)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NomorIdentitasLain)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NamaIbuKandung)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NamaIbuKandung)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.TempatLahir)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.TempatLahir)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.TanggalLahir)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.TanggalLahir)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.JenisKelamin)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.JenisKelamin)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.Agama)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.Agama)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.Suku)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.Suku)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.BahasaYangDikuasai)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.BahasaYangDikuasai)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.NomorTeleponRumah)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.NomorTeleponRumah)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.NomorTeleponSelular)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.NomorTeleponSelular)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.Pendidikan)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.Pendidikan)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.Pekerjaan)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.Pekerjaan)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.StatusPernikahan)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.StatusPernikahan)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.AlamatLengkap)
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.AlamatLengkap)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col">
+            <dl class="row">
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.RT)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.RT)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.RW)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.RW)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KelurahanDesa)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KelurahanDesa)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.Kecamatan)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.Kecamatan)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KotaKabupaten)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KotaKabupaten)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KodePos)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KodePos)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.Provinsi)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.Provinsi)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.Negara)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.Negara)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.AlamatDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.AlamatDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.RTDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.RTDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.RWDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.RWDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KelurahanDesaDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KelurahanDesaDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KecamatanDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KecamatanDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KotaKabupatenDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KotaKabupatenDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.KodePosDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.KodePosDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.ProvinsiDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.ProvinsiDomisili)
+                </dd>
+                <dt class = "col-sm-6">
+                    @Html.DisplayNameFor(model => model.NegaraDomisili)
+                </dt>
+                <dd class = "col-sm-4">
+                    @Html.DisplayFor(model => model.NegaraDomisili)
+                </dd>
+            </dl>
+        </div>        
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.NomorRekamMedis">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

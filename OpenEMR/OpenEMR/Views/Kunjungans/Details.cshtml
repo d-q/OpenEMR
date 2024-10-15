@@ -1,0 +1,54 @@
+﻿@model OpenEMR.Models.Kunjungan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Kunjungan</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomorRegis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomorRegis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pasien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pasien.NomorRekamMedis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dokter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dokter.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusPasien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusPasien)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WaktuMendaftar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WaktuMendaftar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Penjamin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Penjamin.NamaPenjamin)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

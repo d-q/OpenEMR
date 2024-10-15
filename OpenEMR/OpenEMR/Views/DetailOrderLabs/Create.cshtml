@@ -1,0 +1,60 @@
+﻿@model OpenEMR.Models.DetailOrderLab
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DetailOrderLab</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PegawaiId" class="control-label"></label>
+                <select asp-for="PegawaiId" class ="form-control" asp-items="ViewBag.PegawaiId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PemeriksaanId" class="control-label"></label>
+                <select asp-for="PemeriksaanId" class ="form-control" asp-items="ViewBag.PemeriksaanId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaktuDilakukanPemeriksaan" class="control-label"></label>
+                <input asp-for="WaktuDilakukanPemeriksaan" class="form-control" />
+                <span asp-validation-for="WaktuDilakukanPemeriksaan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NilaiMinimal" class="control-label"></label>
+                <input asp-for="NilaiMinimal" class="form-control" />
+                <span asp-validation-for="NilaiMinimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NilaiMaksimal" class="control-label"></label>
+                <input asp-for="NilaiMaksimal" class="form-control" />
+                <span asp-validation-for="NilaiMaksimal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HasilPemeriksaan" class="control-label"></label>
+                <input asp-for="HasilPemeriksaan" class="form-control" />
+                <span asp-validation-for="HasilPemeriksaan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderLabId" class="control-label"></label>
+                <select asp-for="OrderLabId" class ="form-control" asp-items="ViewBag.OrderLabId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
