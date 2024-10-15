@@ -29,6 +29,18 @@ OpenEMR adalah sistem manajemen rekam medis elektronik (Electronic Medical Recor
 
 Berikut adalah beberapa tangkapan layar yang menunjukkan antarmuka pengguna dan fitur utama dari OpenEMR:
 
+### Formulir Asesmen Nyeri
+![image](https://github.com/user-attachments/assets/ab25b99d-e239-4471-b95e-ebaaed6079d1)
+*Formulir ini digunakan untuk melakukan asesmen nyeri dan mencatat riwayat nyeri pasien.*
+
+### Formulir Pemeriksaan Fisik
+![image](https://github.com/user-attachments/assets/33489c5c-55ff-48a3-a8aa-14e58977fe22)
+*Formulir ini mencakup hasil pemeriksaan fisik pasien, termasuk data vital seperti denyut jantung dan tekanan darah.*
+
+### Formulir Tindakan Kepada Pasien
+![image](https://github.com/user-attachments/assets/4907fa0f-acbb-4194-9e40-bff9a620eede)
+*Formulir ini digunakan untuk mencatat tindakan medis yang diberikan kepada pasien, termasuk prosedur dan terapi.*
+
 ### Manajemen Poli
 ![image](https://github.com/user-attachments/assets/7a9838c4-746a-40f3-85e3-d5b036aa51a8)
 *Formulir ini digunakan untuk mengelola dan membuat master poli dalam sistem.*
@@ -52,17 +64,5 @@ Berikut adalah beberapa tangkapan layar yang menunjukkan antarmuka pengguna dan 
 ### Formulir Pendaftaran Pasien
 ![image](https://github.com/user-attachments/assets/673a9bab-d35d-41e5-927e-2f47aeab25de)
 *Formulir ini digunakan untuk mendaftarkan pasien baru ke dalam sistem.*
-
-### Formulir Asesmen Nyeri
-![image](https://github.com/user-attachments/assets/ab25b99d-e239-4471-b95e-ebaaed6079d1)
-*Formulir ini digunakan untuk melakukan asesmen nyeri dan mencatat riwayat nyeri pasien.*
-
-### Formulir Pemeriksaan Fisik
-![image](https://github.com/user-attachments/assets/33489c5c-55ff-48a3-a8aa-14e58977fe22)
-*Formulir ini mencakup hasil pemeriksaan fisik pasien, termasuk data vital seperti denyut jantung dan tekanan darah.*
-
-### Formulir Tindakan Kepada Pasien
-![image](https://github.com/user-attachments/assets/4907fa0f-acbb-4194-9e40-bff9a620eede)
-*Formulir ini digunakan untuk mencatat tindakan medis yang diberikan kepada pasien, termasuk prosedur dan terapi.*
 
 
