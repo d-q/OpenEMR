@@ -8,7 +8,7 @@ OpenEMR adalah sistem manajemen rekam medis elektronik (Electronic Medical Recor
 - **Kunjungan & Tindakan Medis**: Pencatatan riwayat kunjungan pasien serta tindakan medis yang dilakukan.
 - **Pengelolaan Pemeriksaan**: Integrasi dengan laboratorium, radiologi, serta apotek untuk pengelolaan hasil pemeriksaan dan resep obat.
 - **Pemeriksaan Fisik**: Fitur untuk mencatat hasil pemeriksaan fisik pasien, termasuk denyut jantung, tekanan darah, suhu tubuh, dan kondisi bagian tubuh lainnya.
-- **Manajemen Penjamin**: Pengelolaan data penjamin (asuransi) yang mendukung pemrosesan klaim.
+- **Manajemen Penjamin**: Pengelolaan data penjamin (asuransi).
 - **Analitik & Laporan**: Fitur analitik yang membantu dokter dan manajemen rumah sakit memantau kondisi kesehatan pasien serta kinerja layanan.
 
 ### Teknologi
