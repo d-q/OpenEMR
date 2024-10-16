@@ -66,7 +66,7 @@ namespace OpenEMR.Controllers
         }
 
         // GET: Pemeriksaans/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -88,9 +88,9 @@ namespace OpenEMR.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("KodeTarif,NamaPemeriksaan,Deskripsi,JenisPemeriksaan,KategoriPemeriksaan,Tarif")] Pemeriksaan pemeriksaan)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,KodeTarif,NamaPemeriksaan,Deskripsi,JenisPemeriksaan,KategoriPemeriksaan,Tarif")] Pemeriksaan pemeriksaan)
         {
-            if (id != pemeriksaan.KodeTarif)
+            if (id != pemeriksaan.Id)
             {
                 return NotFound();
             }
@@ -104,7 +104,7 @@ namespace OpenEMR.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PemeriksaanExists(pemeriksaan.KodeTarif))
+                    if (!PemeriksaanExists(pemeriksaan.Id))
                     {
                         return NotFound();
                     }
@@ -119,7 +119,7 @@ namespace OpenEMR.Controllers
         }
 
         // GET: Pemeriksaans/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -127,7 +127,7 @@ namespace OpenEMR.Controllers
             }
 
             var pemeriksaan = await _context.Pemeriksaan
-                .FirstOrDefaultAsync(m => m.KodeTarif == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (pemeriksaan == null)
             {
                 return NotFound();
@@ -139,7 +139,7 @@ namespace OpenEMR.Controllers
         // POST: Pemeriksaans/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             var pemeriksaan = await _context.Pemeriksaan.FindAsync(id);
             _context.Pemeriksaan.Remove(pemeriksaan);
@@ -147,9 +147,9 @@ namespace OpenEMR.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PemeriksaanExists(string id)
+        private bool PemeriksaanExists(int? id)
         {
-            return _context.Pemeriksaan.Any(e => e.KodeTarif == id);
+            return _context.Pemeriksaan.Any(e => e.Id == id);
         }
 
         private void PopulatePemeriksaansDropDownList(object selectedDepartment = null)

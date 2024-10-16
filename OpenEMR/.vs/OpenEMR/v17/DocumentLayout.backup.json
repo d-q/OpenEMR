@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\views\\kunjungans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\views\\kunjungans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\controllers\\pemeriksaanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\controllers\\pemeriksaanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\controllers\\penjaminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\controllers\\penjaminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\models\\pemeriksaan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\models\\pemeriksaan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\models\\penjamin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\models\\penjamin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\controllers\\kunjunganscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\controllers\\kunjunganscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\views\\kunjungans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\views\\kunjungans\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\views\\pemeriksaans\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|solutionrelative:openemr\\views\\pemeriksaans\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C577A816-07AD-4EC6-8B33-F3F9045BDFA7}|OpenEMR\\OpenEMR.csproj|c:\\users\\dzikr\\source\\repos\\openemr\\openemr\\models\\kunjungan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,37 +42,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Penjamin.cs",
+              "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Models\\Penjamin.cs",
+              "RelativeDocumentMoniker": "OpenEMR\\Models\\Penjamin.cs",
+              "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Models\\Penjamin.cs",
+              "RelativeToolTip": "OpenEMR\\Models\\Penjamin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:36:56.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PenjaminsController.cs",
+              "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\PenjaminsController.cs",
+              "RelativeDocumentMoniker": "OpenEMR\\Controllers\\PenjaminsController.cs",
+              "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\PenjaminsController.cs",
+              "RelativeToolTip": "OpenEMR\\Controllers\\PenjaminsController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAuwBsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:36:07.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pemeriksaan.cs",
+              "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Models\\Pemeriksaan.cs",
+              "RelativeDocumentMoniker": "OpenEMR\\Models\\Pemeriksaan.cs",
+              "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Models\\Pemeriksaan.cs",
+              "RelativeToolTip": "OpenEMR\\Models\\Pemeriksaan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:33:28.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PemeriksaansController.cs",
+              "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\PemeriksaansController.cs",
+              "RelativeDocumentMoniker": "OpenEMR\\Controllers\\PemeriksaansController.cs",
+              "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\PemeriksaansController.cs",
+              "RelativeToolTip": "OpenEMR\\Controllers\\PemeriksaansController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAQwHMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:30:37.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Views\\Pemeriksaans\\Index.cshtml",
+              "RelativeDocumentMoniker": "OpenEMR\\Views\\Pemeriksaans\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Views\\Pemeriksaans\\Index.cshtml",
+              "RelativeToolTip": "OpenEMR\\Views\\Pemeriksaans\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-15T19:09:32.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Views\\Kunjungans\\Edit.cshtml",
               "RelativeDocumentMoniker": "OpenEMR\\Views\\Kunjungans\\Edit.cshtml",
               "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Views\\Kunjungans\\Edit.cshtml",
               "RelativeToolTip": "OpenEMR\\Views\\Kunjungans\\Edit.cshtml",
-              "ViewState": "AgIAABkCAAAAAAAAAAAAAC8CAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAHoBAAAAAAAAAAAAAOoBAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-15T14:55:30.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "KunjungansController.cs",
               "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\KunjungansController.cs",
               "RelativeDocumentMoniker": "OpenEMR\\Controllers\\KunjungansController.cs",
               "ToolTip": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Controllers\\KunjungansController.cs",
               "RelativeToolTip": "OpenEMR\\Controllers\\KunjungansController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAIwDIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwGMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T11:44:00.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Kunjungan.cs",
               "DocumentMoniker": "C:\\Users\\dzikr\\source\\repos\\OpenEMR\\OpenEMR\\Models\\Kunjungan.cs",
               "RelativeDocumentMoniker": "OpenEMR\\Models\\Kunjungan.cs",
@@ -60,8 +145,7 @@
               "RelativeToolTip": "OpenEMR\\Models\\Kunjungan.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAAAUwJAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T10:48:35.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T10:48:35.619Z"
             }
           ]
         }
